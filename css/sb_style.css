@@ -1,0 +1,266 @@
+/* -------------------------------------------------------------
+Sass CSS3 Mixins! The Cross-Browser CSS3 Sass Library
+By: Matthieu Aussaguel, http://www.mynameismatthieu.com, @matthieu_tweets
+
+List of CSS3 Sass Mixins File to be @imported and @included as you need
+
+The purpose of this library is to facilitate the use of CSS3 on different browsers avoiding HARD TO READ and NEVER
+ENDING css files
+
+note: All CSS3 Properties are being supported by Safari 5
+more info: http://www.findmebyip.com/litmus/#css3-properties
+
+Mixins available:
+- background-gradient - arguments: Start Color: #3C3C3C, End Color: #999999
+- background-size - arguments: Width: 100%, Height: 100%
+- border-radius - arguments: Radius: 5px
+- border-radius-separate - arguments: Top Left: 5px, Top Left: 5px, Bottom Left: 5px, Bottom Right: 5px
+- box - arguments: Orientation: horizontal, Pack: center, Align: center
+- box-rgba - arguments: R: 60, G: 3, B: 12, Opacity: 0.23, Color: #3C3C3C
+- box-shadow - arguments: X: 2px, Y: 2px, Blur: 5px, Color: rgba(0,0,0,.4)
+- box-sizing - arguments: Type: border-box
+- columns - arguments: Count: 3, Gap: 10
+- double-borders - arguments: Color One: #3C3C3C, Color Two: #999999, Radius: 0
+- flex - arguments: Value: 1
+- flip - arguments: ScaleX: -1
+- font-face - arguments: Font Family: myFont, Eot File Src: myFont.eot, Woff File Src: myFont.woff, Ttf File Src: myFont.ttf
+- opacity - arguments: Opacity: 0.5
+- outline radius - arguments: Radius: 5px
+- resize - arguments: Direction: both
+- rotate - arguments: Degree: 0, M11: 0, M12: 0, M21: 0, M22: 0
+CSS Matrix Rotation Calculator http://www.boogdesign.com/examples/transforms/matrix-calculator.html
+- text-shadow - arguments: X: 2px, Y: 2px, Blur: 5px, Color: rgba(0,0,0,.4)
+- transform - arguments: Parameters: null
+- transition - arguments: What: all, Length: 1s, Easing: ease-in-out
+- triple-borders - arguments: Color One: #3C3C3C, Color Two: #999999, Color Three: #000000, Radius: 0
+
+------------------------------------------------------------- */
+/* FONT FACE */
+/* BACKGROUND GRADIENT */
+/* BACKGROUND SIZE */
+/* BORDER RADIUS */
+/* BOX */
+/* BOX RGBA */
+/* BOX SHADOW */
+/* BOX SIZING */
+/* COLUMNS */
+/* DOUBLE BORDERS */
+/* FLEX */
+/* FLIP */
+/* OPACITY */
+/* OUTLINE RADIUS */
+/* RESIZE */
+/* ROTATE*/
+/* TEXT SHADOW */
+/* TRANSFORM */
+/* TRANSFORM STYLE */
+/* TRANSITION */
+/* BACKFACE VISIBILITY */
+/* TRIPLE BORDERS */
+/* PLACEHOLDER */
+*::-moz-selection {
+  background: #fff;
+  color: #333; }
+
+.sb_widget {
+  /* Buttons */ }
+  .sb_widget .widgetbox {
+    background: #ccc;
+    widht: 100%;
+    max-width: 400px;
+    padding: 10px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; }
+    .sb_widget .widgetbox h3 {
+      text-align: center;
+      font-size: 24px;
+      line-height: 100%;
+      margin: 5px 0 5px; }
+    .sb_widget .widgetbox form {
+      margin: 0; }
+  .sb_widget .input_holder {
+    widht: 100%;
+    position: relative; }
+    .sb_widget .input_holder input[type="text"],
+    .sb_widget .input_holder select {
+      width: 100%;
+      height: 40px;
+      margin-bottom: 4px;
+      text-indent: 5px;
+      display: inline-block;
+      font-size: 14px;
+      line-height: 20px;
+      color: #555555;
+      font-family: "Trebuchet MS",Verdana,sans-serif;
+      vertical-align: middle;
+      border: 1px solid #dedede;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 4px;
+      -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+      -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+      -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+      transition: border linear 0.2s, box-shadow linear 0.2s; }
+      .sb_widget .input_holder input[type="text"]:focus,
+      .sb_widget .input_holder select:focus {
+        border-color: rgba(82, 168, 236, 0.8);
+        outline: 0;
+        outline: thin dotted \9;
+        /* IE6-9 */
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+        -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6); }
+      .sb_widget .input_holder input[type="text"].error,
+      .sb_widget .input_holder select.error {
+        border-color: #ff6d5a;
+        background: #ffeeec; }
+    .sb_widget .input_holder option {
+      font-size: 14px;
+      line-height: 25px;
+      padding: 8px 0;
+      text-indent: 10px; }
+    .sb_widget .input_holder span {
+      position: absolute;
+      top: 12px;
+      right: 10px;
+      font-size: 21px;
+      color: #dedede; }
+  .sb_widget label {
+    font-size: 10px;
+    line-height: 13px;
+    margin-bottom: 4px;
+    display: block; }
+  .sb_widget a.btn_action {
+    width: 100%;
+    margin-top: 10px;
+    display: block;
+    background: #003399;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    text-shadow: 2px 2px 3px rgba(42, 106, 234, 0.5); }
+    .sb_widget a.btn_action:hover {
+      color: #fff;
+      text-decoration: none; }
+  .sb_widget a.btn_external {
+    text-align: center;
+    display: block;
+    margin: 10px 0 0 0;
+    font-size: 12px;
+    text-decoration: none; }
+    .sb_widget a.btn_external:hover {
+      text-decoration: none; }
+
+/* location input field */
+.location_list {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc; }
+
+.location_list ul {
+  padding: 5px; }
+
+.location_list li.ui-menu-item {
+  font-size: 13px;
+  cursor: pointer;
+  list-style: none;
+  padding: 7px 10px; }
+
+.location_list li.ui-menu-item:hover {
+  background-color: #ccc;
+  color: #fff; }
+
+/* Brand dependant */
+.sb_widget .edreams.widgetbox {
+  background: #ffcc00; }
+  .sb_widget .edreams.widgetbox h3 {
+    color: #444;
+    text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5); }
+.sb_widget .edreams label {
+  color: #666; }
+.sb_widget .edreams a.btn_action {
+  border-top: 1px solid #006bdd;
+  background: -moz-linear-gradient(top, #003298 0%, #00035f 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #003298), color-stop(100%, #00035f));
+  background: -webkit-linear-gradient(top, #003298 0%, #00035f 100%);
+  background: -o-linear-gradient(top, #003298 0%, #00035f 100%);
+  background: -ms-linear-gradient(top, #003298 0%, #00035f 100%);
+  background: linear-gradient(to bottom, #003298 0%, #00035f 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003298', endColorstr='#00035f',GradientType=0 ); }
+.sb_widget .edreams a.btn_external {
+  color: #003399; }
+.sb_widget .travellink.widgetbox {
+  background: #48a1b1; }
+  .sb_widget .travellink.widgetbox h3 {
+    color: #fff;
+    text-shadow: 2px 2px 3px rgba(28, 117, 133, 0.5); }
+.sb_widget .travellink label {
+  color: #eee; }
+.sb_widget .travellink a.btn_action {
+  background: #ff4501; }
+.sb_widget .travellink a.btn_external {
+  color: #fff; }
+
+/* Datepicker */
+.ui-datepicker {
+  max-width: 250px; }
+
+.ui-datepicker-calendar {
+  display: none; }
+
+.ui-datepicker-header {
+  background: #ffcc00;
+  border: none; }
+
+.ui-datepicker-buttonpane {
+  border-top: 1px solid #dedede;
+  margin: 9px 0 0; }
+
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next,
+.ui-datepicker .ui-datepicker-prev-hover,
+.ui-datepicker .ui-datepicker-next-hover {
+  width: 30px;
+  height: 34px;
+  top: 2px; }
+
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-prev-hover {
+  left: 2px; }
+
+.ui-datepicker .ui-datepicker-next,
+.ui-datepicker .ui-datepicker-next-hover {
+  right: 2px; }
+
+.ui-datepicker .ui-state-hover,
+.ui-datepicker .ui-datepicker-prev-hover,
+.ui-datepicker .ui-datepicker-next-hover {
+  background: #ecbd15;
+  border: none; }
+
+.ui-widget-content .ui-state-focus,
+.ui-state-focus {
+  background: none;
+  border: none; }
+
+.ui-datepicker select.ui-datepicker-month,
+.ui-datepicker select.ui-datepicker-year {
+  font-size: 13px;
+  margin: 5px 0; }
+
+.ui-datepicker .ui-datepicker-buttonpane button {
+  font-size: 13px; }
+  .ui-datepicker .ui-datepicker-buttonpane button:hover {
+    border: 1px solid #ffcc00; }
+
+/*# sourceMappingURL=sb_style.css.map */
