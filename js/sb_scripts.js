@@ -1,4 +1,9 @@
-jQuery(document).ready(function() {
+jQuery(document).ready(function() {   
+    
+    /***** DATE DROPPER *****/
+    /************************/      
+    jQuery('input[name=alert_from]').dateDropper({lock:'to', lang:'fr', color:'#ffcc00'});    
+    jQuery('input[name=alert_to]').dateDropper({lock:'from', lang:'fr', color:'#ffcc00'});
     
     /***** FOCUS EFFECT *****/
     /************************/    
@@ -7,7 +12,8 @@ jQuery(document).ready(function() {
             jQuery('.sb-home-modal').addClass('active');                              
         })
         .focusout(function() {         
-            jQuery('.sb-home-modal').removeClass('active');                              
+            jQuery('.sb-home-modal').removeClass('active'); 
+            jQuery('.dd_').removeClass('dd_fadein');
         });    
     
     /***** SUBMIT FORM *****/

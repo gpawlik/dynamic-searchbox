@@ -73,6 +73,7 @@ class wp_dynamic_searchbox extends WP_Widget {
                 <select id="<?php echo $this->get_field_id('itinerary'); ?>" name="<?php echo $this->get_field_name('itinerary'); ?>">
                     <option value="timespan" <?php selected($itinerary, 'timespan'); ?>>Time-spans </option>
                     <option value="monthly" <?php selected($itinerary, 'monthly'); ?>>Month specific </option>                                       
+                    <option value="daily" <?php selected($itinerary, 'daily'); ?>>Daily specific </option>  
                 </select>
             </p>
             
@@ -111,21 +112,26 @@ class wp_dynamic_searchbox extends WP_Widget {
                 wp_register_script( 'custom-script', plugins_url('/js/sb_scripts.js?v=1.0.1.', __FILE__), array( 'jquery') );
                 wp_register_script( 'validate', plugins_url('/js/libs/jquery.validate.min.js', __FILE__), array( 'jquery') );                               
                 wp_register_script( 'jquery-ui-core-new', plugins_url('/js/libs/jquery-ui.min.js', __FILE__), array( 'jquery') );
+                wp_register_script( 'jquery-datedropper', plugins_url('/js/libs/jquery.datedropper.js', __FILE__), array( 'jquery') );
                 
                 wp_register_style( 'jquery-ui', plugins_url('/css/libs/jquery-ui.min.css', __FILE__) );
                 wp_register_style( 'jquery-ui-structure', plugins_url('/css/libs/jquery-ui.theme.min.css', __FILE__) );
                 wp_register_style( 'jquery-ui-theme', plugins_url('/css/libs/jquery-ui.structure.min.css', __FILE__) );
+                wp_register_style( 'jquery-datedropper', plugins_url('/css/libs/jquery.datedropper.css', __FILE__) );
                 wp_register_style( 'sb_style', plugins_url('/css/sb_style.css', __FILE__) );                
                 
                 wp_enqueue_script( 'custom-script' );                                
                 wp_enqueue_script( 'validate' );     
                 wp_enqueue_script( 'jquery-ui-core-new' );
+                wp_enqueue_script( 'jquery-datedropper' );
+                
                 //wp_enqueue_script( 'jquery-ui-autocomplete' ); /* doesnt work with current version of ui (1.10), ui.core of 1.11 hardcoded... */
                 //wp_enqueue_script( 'jquery-ui-datepicker' );
                 
                 wp_enqueue_style( 'jquery-ui' );
                 wp_enqueue_style( 'jquery-ui-structure' );
                 wp_enqueue_style( 'jquery-ui-theme' );
+                wp_enqueue_style( 'jquery-datedropper' );
                 wp_enqueue_style( 'sb_style' );
                 
                 if($page_extension !== 'com') {

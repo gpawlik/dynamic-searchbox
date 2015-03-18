@@ -3,6 +3,7 @@
 
 $action_color:#003399;
 $brand-main-edreams:#1e44d5;
+$brand-side-edreams:#ffcc00;
 
 *::-moz-selection {
     background:#fff;
@@ -183,7 +184,7 @@ $brand-main-edreams:#1e44d5;
 .sb_widget {
     .edreams_old {
         &.widgetbox {
-            background:#ffcc00;
+            background:$brand-side-edreams;
             h3 {     
                 color:#444;
                 text-shadow: 2px 2px 3px rgba(255,255,255,0.5); 
@@ -209,7 +210,7 @@ $brand-main-edreams:#1e44d5;
     .edreams {
         &.widgetbox {
             background:#fff;
-            border-top:4px solid #ffcc00;
+            border-top:4px solid $brand-side-edreams;
             box-shadow:0 0 4px -1px #333;
             position:relative;
             z-index:998;

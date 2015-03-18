@@ -43,6 +43,15 @@
                 <input type="text" autocomplete="off" name="alert_date" id="datepicker" class="txt-auto" data-required="required" value="<?php echo ucfirst(date_i18n( 'F Y' )); ?>">
                 <span class="input_icon icon-calendar-empty"></span>
                 <?php
+                } else if($itinerary === "timespan") {
+                ?>          
+                <select id="alert_period" name="alert_period">
+                    <option value="WITHIN_2_WEEKS" selected="selected">Within 2 weeks</option>
+                    <option value="BETWEEN_2_AND_4_WEEKS">Between 2 and 4 weeks</option>
+                    <option value="MORE_THAN_4_WEEKS">More than 4 weeks </option>                 
+                </select> 
+                <span class="input_icon icon-calendar-empty"></span>
+                <?php
                 } else {
                 ?>          
                 <select id="alert_period" name="alert_period">
