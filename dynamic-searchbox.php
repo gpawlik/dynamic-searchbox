@@ -111,7 +111,7 @@ class wp_dynamic_searchbox extends WP_Widget {
                 wp_register_style( 'jquery-ui', plugins_url('/css/libs/jquery-ui.min.css', __FILE__) );
                 wp_register_style( 'jquery-ui-structure', plugins_url('/css/libs/jquery-ui.theme.min.css', __FILE__) );
                 wp_register_style( 'jquery-ui-theme', plugins_url('/css/libs/jquery-ui.structure.min.css', __FILE__) );
-                wp_register_style( 'sb_style', plugins_url('/css/sb_style.css', __FILE__) );
+                wp_register_style( 'sb_style', plugins_url('/css/sb_style.css', __FILE__) );                
                 
                 wp_enqueue_script( 'custom-script' );                                
                 wp_enqueue_script( 'validate' );     

@@ -1,11 +1,14 @@
 @import "sass/mixins";
+@import "sass/fontello";
 
 $action_color:#003399;
+$brand-main-edreams:#1e44d5;
 
 *::-moz-selection {
     background:#fff;
     color:#333;
 }
+
 .sb_widget {
     .widgetbox {
         background:#ccc;
@@ -14,7 +17,6 @@ $action_color:#003399;
         padding:10px;
         @include border-radius(5px);
         h3 {
-            text-align:center;
             font-size:24px;
             line-height:100%;
             margin:5px 0 5px;                               
@@ -23,42 +25,50 @@ $action_color:#003399;
             margin:0;
         }
     }
+    .sb-form-fields {
+        margin-bottom:15px;
+    }
     .input_holder {
         widht:100%;
         position:relative;
+        margin-bottom:5px;
         input[type="text"],
         select {
-            width:100%;
-            height:40px;
-            margin-bottom:4px;
-            text-indent:5px;
-            display: inline-block;
-            font-size: 14px;
-            line-height: 20px;
-            color: #555555;
-            font-family:"Trebuchet MS",Verdana,sans-serif;
-            vertical-align: middle;
-            border:1px solid #dedede;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: white;
+            filter: none;
             -webkit-border-radius: 4px;
-               -moz-border-radius: 4px;
-                    border-radius: 4px;
-            -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
-               -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
-                 -o-transition: border linear 0.2s, box-shadow linear 0.2s;
-                    transition: border linear 0.2s, box-shadow linear 0.2s;                        
+            -moz-border-radius: 4px;
+            -ms-border-radius: 4px;
+            -o-border-radius: 4px;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 0 4px rgba(0,0,0,0.2);
+            -moz-box-shadow: inset 0 0 4px rgba(0,0,0,0.2);
+            box-shadow: inset 0 0 4px rgba(0,0,0,0.2);
+            height: 42px;
+            width: 100%;
+            border: 1px solid #ccc;
+            color: #333;
+            font-size: 14px;
+            box-sizing: border-box;
+            padding: 10px;  
+            &:hover {
+                border:1px solid #aaa;
+            }
             &:focus {
-                border-color: rgba(82, 168, 236, 0.8);
-                outline: 0;
-                outline: thin dotted \9;
-                /* IE6-9 */
-                -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
-                   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
-                        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);                            
+                border:2px solid #1e44d5;
+                padding:9px;
             }
             &.error {
-                border-color:#ff6d5a;
-                background:#ffeeec;
-            }        
+                border:2px solid #ff6d5a;
+                padding:9px;
+            }  
+            &[placeholder] {  
+               color:#999;  
+               font-style:italic;
+            }            
         }
         option {
             font-size:14px;
@@ -68,10 +78,11 @@ $action_color:#003399;
         }
         span {
             position:absolute;
-            top:12px;
-            right:10px;
-            font-size:21px;
+            top:6px;
+            right:4px;
+            font-size:19px;
             color:#dedede;
+            border-left:1px solid #dedede;
         }
     }
     label {
@@ -89,13 +100,9 @@ $action_color:#003399;
         background:#003399;
         color:#fff;
         text-align:center;
-        line-height:50px;
         font-size:20px;
-        font-weight:bold;
-        text-transform:uppercase;
         cursor:pointer;
         @include border-radius(5px);
-        text-shadow: 2px 2px 3px rgba(42,106,234,0.5);
         &:hover {
             color:#fff;
             text-decoration:none;
@@ -113,11 +120,37 @@ $action_color:#003399;
     }
    
 }
+.sb-home-modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 997;
+    background-color: #000;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: visibility 0s linear,opacity 300ms linear;
+    -webkit-transition-delay: 300ms,0s;
+    -moz-transition: visibility 0s linear 300ms,opacity 300ms linear;
+    -o-transition: visibility 0s linear 300ms,opacity 300ms linear;
+    transition: visibility 0s linear 300ms,opacity 300ms linear; 
+    &.active {
+        filter: alpha(opacity=60);
+        opacity: .6;
+        visibility: visible;
+        -webkit-transition-delay: 0s;
+        -moz-transition-delay: 0s;
+        -o-transition-delay: 0s;
+        transition-delay: 0s;        
+    }
+}
 
 
 /* location input field */
 .location_list {
     position:absolute;
+    z-index:998;
     top:30px;
     left:0;
     background-color:#fff;
@@ -139,7 +172,7 @@ $action_color:#003399;
 
 /* Brand dependant */
 .sb_widget {
-    .edreams {
+    .edreams_old {
         &.widgetbox {
             background:#ffcc00;
             h3 {     
@@ -159,6 +192,70 @@ $action_color:#003399;
             background: -ms-linear-gradient(top,  #003298 0%,#00035f 100%);
             background: linear-gradient(to bottom,  #003298 0%,#00035f 100%);
             filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003298', endColorstr='#00035f',GradientType=0 );   
+        }
+        a.btn_external {
+            color:#003399;
+        }        
+    }
+    .edreams {
+        &.widgetbox {
+            background:#fff;
+            border-top:4px solid #ffcc00;
+            box-shadow:0 0 4px -1px #333;
+            position:relative;
+            z-index:998;
+            h3 {     
+                color:#444;
+                margin:0 0 10px;
+                font-size:24px;
+                line-height:100%;
+                text-transform:none;
+                text-align:left;
+                letter-spacing:unset;
+                .ds-header-feat {
+                    color:$brand-main-edreams;
+                    border-top:4px solid $brand-main-edreams;
+                    padding-top:4px;
+                }
+            }            
+        }
+        label {
+            color:#666;
+        }  
+        .btn_action_wrapper {
+            height:44px;
+            overflow:hidden;
+        }
+        a.btn_action {
+            cursor: pointer;
+            margin: 0;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            -ms-border-radius: 4px;
+            -o-border-radius: 4px;
+            border-radius: 4px;            
+            font-size: 18px;
+            font-weight: 600;
+            background: #1e44d5;
+            filter: none;
+            color: white;
+            border-color: #060583;
+            border-style: solid;
+            border-width: 1px 0px 4px;
+            height: 39px;
+            line-height: 39px;
+            -webkit-transition: margin 75ms,border-width 75ms,background 75ms;
+            -moz-transition: margin 75ms,border-width 75ms,background 75ms;
+            -o-transition: margin 75ms,border-width 75ms,background 75ms;
+            transition: margin 75ms,border-width 75ms,background 75ms;
+            vertical-align: top; 
+            &:hover {
+                background:lighten(#060583, 7%);
+            }
+            &:active {
+                border-width: 1px 0px 1px;
+                margin-top: 3px;                
+            }
         }
         a.btn_external {
             color:#003399;

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* -------------------------------------------------------------
 Sass CSS3 Mixins! The Cross-Browser CSS3 Sass Library
 By: Matthieu Aussaguel, http://www.mynameismatthieu.com, @matthieu_tweets
@@ -58,6 +59,70 @@ CSS Matrix Rotation Calculator http://www.boogdesign.com/examples/transforms/mat
 /* BACKFACE VISIBILITY */
 /* TRIPLE BORDERS */
 /* PLACEHOLDER */
+@font-face {
+  font-family: 'd-searchbox';
+  src: url("../fonts/d-searchbox.eot?41046635");
+  src: url("../fonts/d-searchbox.eot?41046635#iefix") format("embedded-opentype"), url("../fonts/d-searchbox.woff?41046635") format("woff"), url("../fonts/d-searchbox.ttf?41046635") format("truetype"), url("../fonts/d-searchbox.svg?41046635#d-searchbox") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'd-searchbox';
+    src: url('../font/d-searchbox.svg?41046635#d-searchbox') format('svg');
+  }
+}
+*/
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "d-searchbox";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
+
+.icon-flight:before {
+  content: '\e800'; }
+
+/* '¯áÇ' */
+.icon-ok:before {
+  content: '\e801'; }
+
+/* '¯áü' */
+.icon-cancel:before {
+  content: '\e802'; }
+
+/* '¯áé' */
+.icon-home:before {
+  content: '\e803'; }
+
+/* '¯áâ' */
+.icon-calendar-empty:before {
+  content: '\e804'; }
+
+/* '¯áä' */
+.icon-location:before {
+  content: '\e805'; }
+
+/* '¯áà' */
 *::-moz-selection {
   background: #fff;
   color: #333; }
@@ -73,48 +138,54 @@ CSS Matrix Rotation Calculator http://www.boogdesign.com/examples/transforms/mat
     -webkit-border-radius: 5px;
     border-radius: 5px; }
     .sb_widget .widgetbox h3 {
-      text-align: center;
       font-size: 24px;
       line-height: 100%;
       margin: 5px 0 5px; }
     .sb_widget .widgetbox form {
       margin: 0; }
+  .sb_widget .sb-form-fields {
+    margin-bottom: 15px; }
   .sb_widget .input_holder {
     widht: 100%;
-    position: relative; }
+    position: relative;
+    margin-bottom: 5px; }
     .sb_widget .input_holder input[type="text"],
     .sb_widget .input_holder select {
-      width: 100%;
-      height: 40px;
-      margin-bottom: 4px;
-      text-indent: 5px;
-      display: inline-block;
-      font-size: 14px;
-      line-height: 20px;
-      color: #555555;
-      font-family: "Trebuchet MS",Verdana,sans-serif;
-      vertical-align: middle;
-      border: 1px solid #dedede;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background: white;
+      filter: none;
       -webkit-border-radius: 4px;
       -moz-border-radius: 4px;
+      -ms-border-radius: 4px;
+      -o-border-radius: 4px;
       border-radius: 4px;
-      -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
-      -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
-      -o-transition: border linear 0.2s, box-shadow linear 0.2s;
-      transition: border linear 0.2s, box-shadow linear 0.2s; }
+      -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
+      -moz-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
+      box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
+      height: 42px;
+      width: 100%;
+      border: 1px solid #ccc;
+      color: #333;
+      font-size: 14px;
+      box-sizing: border-box;
+      padding: 10px; }
+      .sb_widget .input_holder input[type="text"]:hover,
+      .sb_widget .input_holder select:hover {
+        border: 1px solid #aaa; }
       .sb_widget .input_holder input[type="text"]:focus,
       .sb_widget .input_holder select:focus {
-        border-color: rgba(82, 168, 236, 0.8);
-        outline: 0;
-        outline: thin dotted \9;
-        /* IE6-9 */
-        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
-        -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
-        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6); }
+        border: 2px solid #1e44d5;
+        padding: 9px; }
       .sb_widget .input_holder input[type="text"].error,
       .sb_widget .input_holder select.error {
-        border-color: #ff6d5a;
-        background: #ffeeec; }
+        border: 2px solid #ff6d5a;
+        padding: 9px; }
+      .sb_widget .input_holder input[type="text"][placeholder],
+      .sb_widget .input_holder select[placeholder] {
+        color: #999;
+        font-style: italic; }
     .sb_widget .input_holder option {
       font-size: 14px;
       line-height: 25px;
@@ -122,10 +193,11 @@ CSS Matrix Rotation Calculator http://www.boogdesign.com/examples/transforms/mat
       text-indent: 10px; }
     .sb_widget .input_holder span {
       position: absolute;
-      top: 12px;
-      right: 10px;
-      font-size: 21px;
-      color: #dedede; }
+      top: 6px;
+      right: 4px;
+      font-size: 19px;
+      color: #dedede;
+      border-left: 1px solid #dedede; }
   .sb_widget label {
     font-size: 10px;
     line-height: 13px;
@@ -138,15 +210,11 @@ CSS Matrix Rotation Calculator http://www.boogdesign.com/examples/transforms/mat
     background: #003399;
     color: #fff;
     text-align: center;
-    line-height: 50px;
     font-size: 20px;
-    font-weight: bold;
-    text-transform: uppercase;
     cursor: pointer;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
-    border-radius: 5px;
-    text-shadow: 2px 2px 3px rgba(42, 106, 234, 0.5); }
+    border-radius: 5px; }
     .sb_widget a.btn_action:hover {
       color: #fff;
       text-decoration: none; }
@@ -159,9 +227,34 @@ CSS Matrix Rotation Calculator http://www.boogdesign.com/examples/transforms/mat
     .sb_widget a.btn_external:hover {
       text-decoration: none; }
 
+.sb-home-modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 997;
+  background-color: #000;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: visibility 0s linear,opacity 300ms linear;
+  -webkit-transition-delay: 300ms,0s;
+  -moz-transition: visibility 0s linear 300ms,opacity 300ms linear;
+  -o-transition: visibility 0s linear 300ms,opacity 300ms linear;
+  transition: visibility 0s linear 300ms,opacity 300ms linear; }
+  .sb-home-modal.active {
+    filter: alpha(opacity=60);
+    opacity: .6;
+    visibility: visible;
+    -webkit-transition-delay: 0s;
+    -moz-transition-delay: 0s;
+    -o-transition-delay: 0s;
+    transition-delay: 0s; }
+
 /* location input field */
 .location_list {
   position: absolute;
+  z-index: 998;
   top: 30px;
   left: 0;
   background-color: #fff;
@@ -181,14 +274,14 @@ CSS Matrix Rotation Calculator http://www.boogdesign.com/examples/transforms/mat
   color: #fff; }
 
 /* Brand dependant */
-.sb_widget .edreams.widgetbox {
+.sb_widget .edreams_old.widgetbox {
   background: #ffcc00; }
-  .sb_widget .edreams.widgetbox h3 {
+  .sb_widget .edreams_old.widgetbox h3 {
     color: #444;
     text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5); }
-.sb_widget .edreams label {
+.sb_widget .edreams_old label {
   color: #666; }
-.sb_widget .edreams a.btn_action {
+.sb_widget .edreams_old a.btn_action {
   border-top: 1px solid #006bdd;
   background: -moz-linear-gradient(top, #003298 0%, #00035f 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #003298), color-stop(100%, #00035f));
@@ -197,6 +290,59 @@ CSS Matrix Rotation Calculator http://www.boogdesign.com/examples/transforms/mat
   background: -ms-linear-gradient(top, #003298 0%, #00035f 100%);
   background: linear-gradient(to bottom, #003298 0%, #00035f 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003298', endColorstr='#00035f',GradientType=0 ); }
+.sb_widget .edreams_old a.btn_external {
+  color: #003399; }
+.sb_widget .edreams.widgetbox {
+  background: #fff;
+  border-top: 4px solid #ffcc00;
+  box-shadow: 0 0 4px -1px #333;
+  position: relative;
+  z-index: 998; }
+  .sb_widget .edreams.widgetbox h3 {
+    color: #444;
+    margin: 0 0 10px;
+    font-size: 24px;
+    line-height: 100%;
+    text-transform: none;
+    text-align: left;
+    letter-spacing: unset; }
+    .sb_widget .edreams.widgetbox h3 .ds-header-feat {
+      color: #1e44d5;
+      border-top: 4px solid #1e44d5;
+      padding-top: 4px; }
+.sb_widget .edreams label {
+  color: #666; }
+.sb_widget .edreams .btn_action_wrapper {
+  height: 44px;
+  overflow: hidden; }
+.sb_widget .edreams a.btn_action {
+  cursor: pointer;
+  margin: 0;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  font-size: 18px;
+  font-weight: 600;
+  background: #1e44d5;
+  filter: none;
+  color: white;
+  border-color: #060583;
+  border-style: solid;
+  border-width: 1px 0px 4px;
+  height: 39px;
+  line-height: 39px;
+  -webkit-transition: margin 75ms,border-width 75ms,background 75ms;
+  -moz-transition: margin 75ms,border-width 75ms,background 75ms;
+  -o-transition: margin 75ms,border-width 75ms,background 75ms;
+  transition: margin 75ms,border-width 75ms,background 75ms;
+  vertical-align: top; }
+  .sb_widget .edreams a.btn_action:hover {
+    background: #0806a5; }
+  .sb_widget .edreams a.btn_action:active {
+    border-width: 1px 0px 1px;
+    margin-top: 3px; }
 .sb_widget .edreams a.btn_external {
   color: #003399; }
 .sb_widget .travellink.widgetbox {

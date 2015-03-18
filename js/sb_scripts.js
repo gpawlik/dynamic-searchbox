@@ -1,5 +1,15 @@
 jQuery(document).ready(function() {
     
+    /***** FOCUS EFFECT *****/
+    /************************/    
+    jQuery('#searchbox_form input, #searchbox_form select')
+        .focusin(function() {         
+            jQuery('.sb-home-modal').addClass('active');                              
+        })
+        .focusout(function() {         
+            jQuery('.sb-home-modal').removeClass('active');                              
+        });    
+    
     /***** SUBMIT FORM *****/
     /***********************/
     jQuery('body').on('click', '#submit_search', function(e) { 
