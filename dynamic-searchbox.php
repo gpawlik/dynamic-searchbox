@@ -100,6 +100,10 @@ class wp_dynamic_searchbox extends WP_Widget {
            $brand       = $instance['brand'];
            $itinerary   = $instance['itinerary'];
            
+           // cross-wp variables
+           $default_origin_name = get_post_meta(get_the_ID(), 'sb-city-name', true);
+           $default_origin_iata = get_post_meta(get_the_ID(), 'sb-city-iata', true);
+           
            $page_extension = __('com', 'dynamic-searchbox');                       
            
             // Load scripts            

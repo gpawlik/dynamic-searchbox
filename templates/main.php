@@ -1,19 +1,21 @@
 <div class="widgetbox <?= $brand; ?>">
     
-    <!--<h3><?= __('Search for the latest offers!', 'dynamic-searchbox') ?></h3>-->
-    
     <h3>
         <span class="ds-header-feat">
             <span class="ds-icon icon-flight"></span>
             <?= __('Flights', 'dynamic-searchbox') ?>
         </span> 
-        <?= __('to', 'dynamic-searchbox') ?> Amsterdam
+        <?php
+        if(!empty($default_origin_name)) {
+            echo __('to', 'dynamic-searchbox') . ' ' . ucfirst($default_origin_name);
+        }
+        ?>
     </h3>
     
     <form id="searchbox_form">
 
         <input type="hidden" name="user_departure" autocomplete="off" />
-        <input type="hidden" name="user_arrival" autocomplete="off" />
+        <input type="hidden" name="user_arrival" autocomplete="off" value="<?= $default_origin_iata ?>"/>
         <input type="hidden" name="user_language" value="<?= __('en', 'dynamic-searchbox') ?>" autocomplete="off" />   
         <input type="hidden" name="user_page" value="<?= __('com', 'dynamic-searchbox') ?>" autocomplete="off" /> 
         <input type="hidden" name="user_brand" value="<?= $brand ?>" autocomplete="off" />         
@@ -29,7 +31,7 @@
 
             <label for="alert_to"><?= __('To', 'dynamic-searchbox'); ?>:</label>
             <div class="input_holder">                           
-                <input type="text" autocomplete="off" name="alert_to" class="txt-auto" data-related="user_arrival" placeholder="<?= __('Enter a city...', 'dynamic-searchbox'); ?>">
+                <input type="text" autocomplete="off" name="alert_to" class="txt-auto" data-related="user_arrival" placeholder="<?= __('Enter a city...', 'dynamic-searchbox'); ?>" value="<?= $default_origin_name ?>">
                 <span class="input_icon icon-location"></span>
             </div>
 
