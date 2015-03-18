@@ -1,5 +1,5 @@
-@import "sass/mixins";
-@import "sass/fontello";
+@import "partials/mixins";
+@import "partials/fontello";
 
 $action_color:#003399;
 $brand-main-edreams:#1e44d5;
@@ -53,7 +53,8 @@ $brand-main-edreams:#1e44d5;
             color: #333;
             font-size: 14px;
             box-sizing: border-box;
-            padding: 10px;  
+            padding: 10px; 
+            font-style:normal;
             &:hover {
                 border:1px solid #aaa;
             }
@@ -64,11 +65,19 @@ $brand-main-edreams:#1e44d5;
             &.error {
                 border:2px solid #ff6d5a;
                 padding:9px;
-            }  
-            &[placeholder] {  
+            } 
+            &::-webkit-input-placeholder {
                color:#999;  
                font-style:italic;
-            }            
+            }
+            &::-moz-placeholder {
+               color:#999;  
+               font-style:italic;
+            }
+            &:-ms-input-placeholder {
+               color:#999;  
+               font-style:italic;
+            }                    
         }
         option {
             font-size:14px;
