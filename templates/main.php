@@ -35,35 +35,51 @@
                 <span class="input_icon icon-location"></span>
             </div>
 
-            <label for="alert_date"><?= __('Departure date', 'dynamic-searchbox'); ?>:</label>
+                      
+            <?php
+            if($itinerary === "monthly") {
+            ?>
+            <label for="alert_date"><?= __('Departure date', 'dynamic-searchbox'); ?>:</label>  
             <div class="input_holder"> 
-                <?php
-                if($itinerary === "monthly") {
-                ?>
-                <input type="text" autocomplete="off" name="alert_date" id="datepicker" class="txt-auto" data-required="required" value="<?php echo ucfirst(date_i18n( 'F Y' )); ?>">
+                <input type="text" autocomplete="off" name="alert_date" id="datepicker" class="txt-auto" data-required="required" value="<?php echo ucfirst(date_i18n( 'F Y' )); ?>">                
                 <span class="input_icon icon-calendar-empty"></span>
-                <?php
-                } else if($itinerary === "timespan") {
-                ?>          
-                <select id="alert_period" name="alert_period">
-                    <option value="WITHIN_2_WEEKS" selected="selected">Within 2 weeks</option>
-                    <option value="BETWEEN_2_AND_4_WEEKS">Between 2 and 4 weeks</option>
-                    <option value="MORE_THAN_4_WEEKS">More than 4 weeks </option>                 
-                </select> 
-                <span class="input_icon icon-calendar-empty"></span>
-                <?php
-                } else {
-                ?>          
-                <select id="alert_period" name="alert_period">
-                    <option value="WITHIN_2_WEEKS" selected="selected">Within 2 weeks</option>
-                    <option value="BETWEEN_2_AND_4_WEEKS">Between 2 and 4 weeks</option>
-                    <option value="MORE_THAN_4_WEEKS">More than 4 weeks </option>                 
-                </select> 
-                <span class="input_icon icon-calendar-empty"></span>
-                <?php
-                }
-                ?>
             </div>
+            <?php
+            } 
+            else if($itinerary === "timespan") {
+            ?>   
+            <label for="alert_period"><?= __('Departure date', 'dynamic-searchbox'); ?>:</label>  
+            <div class="input_holder"> 
+                <select id="alert_period" name="alert_period">
+                    <option value="WITHIN_2_WEEKS" selected="selected">Within 2 weeks</option>
+                    <option value="BETWEEN_2_AND_4_WEEKS">Between 2 and 4 weeks</option>
+                    <option value="MORE_THAN_4_WEEKS">More than 4 weeks </option>                 
+                </select>    
+                <span class="input_icon icon-calendar-empty"></span>
+            </div>
+            <?php
+            } 
+            else {
+            ?>   
+            <div class="sb_cf"> 
+                <div class="input_holder_half">
+                    <label for="alert_date_from"><?= __('Departure', 'dynamic-searchbox'); ?>:</label>  
+                    <div class="input_holder">                        
+                        <input type="text" autocomplete="off" name="alert_date_from" data-required="required" value="">    
+                        <span class="input_icon icon-calendar-empty"></span>
+                    </div>
+                </div>
+                <div class="input_holder_half last-item">
+                    <label for="alert_date_to"><?= __('Return', 'dynamic-searchbox'); ?>:</label>  
+                    <div class="input_holder">                        
+                        <input type="text" autocomplete="off" name="alert_date_to" data-required="required" value="">    
+                        <span class="input_icon icon-calendar-empty"></span>
+                    </div>
+                </div>                
+            </div>
+            <?php
+            }
+            ?>                            
         
         </div>
 

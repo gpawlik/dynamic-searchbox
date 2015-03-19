@@ -127,6 +127,14 @@ CSS Matrix Rotation Calculator http://www.boogdesign.com/examples/transforms/mat
   background: #fff;
   color: #333; }
 
+.sb_cf:before,
+.sb_cf:after {
+  content: " ";
+  display: table; }
+
+.sb_cf:after {
+  clear: both; }
+
 .sb_widget {
   /* Buttons */ }
   .sb_widget .widgetbox {
@@ -207,6 +215,12 @@ CSS Matrix Rotation Calculator http://www.boogdesign.com/examples/transforms/mat
       font-size: 19px;
       color: #dedede;
       border-left: 1px solid #dedede; }
+  .sb_widget .input_holder_half {
+    width: 48.5%;
+    margin-right: 3%;
+    float: left; }
+    .sb_widget .input_holder_half.last-item {
+      margin-right: 0; }
   .sb_widget label {
     font-size: 10px;
     line-height: 13px;

@@ -2,8 +2,8 @@ jQuery(document).ready(function() {
     
     /***** DATE DROPPER *****/
     /************************/      
-    jQuery('input[name=alert_from]').dateDropper({lock:'to', lang:'fr', color:'#ffcc00'});    
-    jQuery('input[name=alert_to]').dateDropper({lock:'from', lang:'fr', color:'#ffcc00'});
+    jQuery('input[name=alert_date_from]').dateDropper({lock:'to', lang:'fr', color:'#ffcc00'});    
+    jQuery('input[name=alert_date_to]').dateDropper({lock:'from', lang:'fr', color:'#ffcc00'});
     
     /***** FOCUS EFFECT *****/
     /************************/    
