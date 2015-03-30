@@ -1,61 +1,81 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Dynamic Searchbox\n"
-"POT-Creation-Date: 2014-11-20 18:35+0100\n"
-"PO-Revision-Date: 2014-11-21 12:19+0100\n"
+"POT-Creation-Date: 2015-03-30 12:34+0100\n"
+"PO-Revision-Date: 2015-03-30 12:34+0100\n"
 "Last-Translator: \n"
 "Language-Team:  <pawlik.gregor@gmail.com>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.10\n"
+"X-Generator: Poedit 1.7.5\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __\n"
 "X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
 
-#: dynamic-searchbox.php:24
+#: ../dynamic-searchbox.php:24
 msgid "Dynamic Searchbox"
 msgstr "Dynamic Searchbox"
 
-#: templates/main.php:3
-msgid "Search for the latest offers!"
-msgstr "¡Busca las últimas ofertas!"
-
-#: templates/main.php:9
-msgid "en"
-msgstr "es"
-
-#: templates/main.php:10
+#: ../dynamic-searchbox.php:108 ../templates/main.php:20
 msgid "com"
 msgstr "es"
 
-#: templates/main.php:13
+#: ../templates/main.php:6
+msgid "Flights"
+msgstr "Vuelos"
+
+#: ../templates/main.php:10
+msgid "to"
+msgstr "a"
+
+#: ../templates/main.php:19
+msgid "en"
+msgstr "es"
+
+#: ../templates/main.php:26
 msgid "From"
 msgstr "Desde"
 
-#: templates/main.php:15 templates/main.php:21
+#: ../templates/main.php:28 ../templates/main.php:34
 msgid "Enter a city..."
 msgstr "Introduce una ciudad..."
 
-#: templates/main.php:19
+#: ../templates/main.php:32
 msgid "To"
 msgstr "A"
 
-#: templates/main.php:25
+#: ../templates/main.php:42 ../templates/main.php:51
 msgid "Departure date"
 msgstr "Fecha de salida"
 
-#: templates/main.php:31
+#: ../templates/main.php:66
+msgid "Departure"
+msgstr "Origen"
+
+#: ../templates/main.php:73
+msgid "Return"
+msgstr "Destino"
+
+#: ../templates/main.php:87
 msgid "Get offers!"
 msgstr "¡Ver ofertas!"
 
-#: templates/main.php:35
+#: ../templates/main.php:92
 msgid "http://www.edreams.com/flights/"
 msgstr "http://www.edreams.es/vuelos/"
 
-#: templates/main.php:35
+#: ../templates/main.php:92
 msgid "Advanced search"
 msgstr "Búsqueda avanzada"
+
+#: ../js/libs/jquery-ui.min.js:10
+msgid "'"
+msgstr ""
+
+#~ msgid "Search for the latest offers!"
+#~ msgstr "¡Busca las últimas ofertas!"
