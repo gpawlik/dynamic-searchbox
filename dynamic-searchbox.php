@@ -62,7 +62,7 @@ class wp_dynamic_searchbox extends WP_Widget {
                 <label for="<?php echo $this->get_field_id('brand'); ?>"><?php _e('Brand:', 'sb_brand'); ?></label>                
                 <select id="<?php echo $this->get_field_id('brand'); ?>" name="<?php echo $this->get_field_name('brand'); ?>">
                     <option value="edreams" <?php selected($brand, 'edreams'); ?>>eDreams </option>
-                    <!--<option value="opodo" <?php selected($brand, 'opodo'); ?>>Opodo </option>-->
+                    <option value="opodo" <?php selected($brand, 'opodo'); ?>>Opodo </option>
                     <option value="travellink" <?php selected($brand, 'travellink'); ?>>Travellink </option>
                     <!--<option value="govoyages" <?php selected($brand, 'govoyages'); ?>>GoVoyages </option>-->                    
                 </select>

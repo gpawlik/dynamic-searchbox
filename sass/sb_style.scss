@@ -2,8 +2,18 @@
 @import "partials/fontello";
 
 $action_color:#003399;
+
+$brand-main-default:#999;
+$brand-side-default:#333;
+
 $brand-main-edreams:#1e44d5;
 $brand-side-edreams:#ffcc00;
+
+$brand-main-travellink:#ff8248;
+$brand-side-travellink:#4ea9b9;
+
+$brand-main-opodo:#990000;
+$brand-side-opodo:#f67620;
 
 *::-moz-selection {
     background:#fff;
@@ -19,17 +29,32 @@ $brand-side-edreams:#ffcc00;
     clear: both;
 }
 
+/****** MAIN SEARCHBOX ******/
 .sb_widget {
     .widgetbox {
-        background:#ccc;
-        widht:100%;
+        width:100%;
         max-width:400px;
         padding:10px;
         @include border-radius(5px);
+        background:#fff;
+        border-top:4px solid $brand-main-default;
+        box-shadow:0 0 4px -1px #333;
+        position:relative;
+        z-index:998;        
         h3 {
+            color:$brand-main-default;
+            margin:0 0 10px;
             font-size:24px;
             line-height:100%;
-            margin:5px 0 5px;                               
+            text-transform:none;
+            text-align:left;
+            letter-spacing:unset;   
+            .ds-header-feat {
+                color:#333;
+                border-top:4px solid $brand-side-default;
+                padding-top:4px;
+                vertical-align:top;
+            }            
         }
         form {
             margin:0;
@@ -39,7 +64,7 @@ $brand-side-edreams:#ffcc00;
         margin-bottom:15px;
     }
     .input_holder {
-        widht:100%;
+        width:100%;
         position:relative;
         margin-bottom:8px;
         input[type="text"],
@@ -49,11 +74,7 @@ $brand-side-edreams:#ffcc00;
             appearance: none;
             background: white;
             filter: none;
-            -webkit-border-radius: 4px;
-            -moz-border-radius: 4px;
-            -ms-border-radius: 4px;
-            -o-border-radius: 4px;
-            border-radius: 4px;
+            @include border-radius(4px);
             -webkit-box-shadow: inset 0 0 4px rgba(0,0,0,0.2);
             -moz-box-shadow: inset 0 0 4px rgba(0,0,0,0.2);
             box-shadow: inset 0 0 4px rgba(0,0,0,0.2);
@@ -73,7 +94,7 @@ $brand-side-edreams:#ffcc00;
                 border:1px solid #aaa;
             }
             &:focus {
-                border:2px solid #1e44d5;
+                border:2px solid $brand-main-default;
                 padding:9px;
                 outline:none;
             }
@@ -122,23 +143,45 @@ $brand-side-edreams:#ffcc00;
         line-height:13px;
         margin-bottom:4px;
         display:block;
+        color:#666;
+      
     }  
 
     /* Buttons */
+    .btn_action_wrapper {
+        height:44px;
+        overflow:hidden;
+    }    
     a.btn_action {
         width:100%;
-        margin-top:10px;
         display:block;
-        background:#003399;
-        color:#fff;
+        background:$brand-main-default;
         text-align:center;
-        font-size:20px;
         cursor:pointer;
-        @include border-radius(5px);
+        margin: 0;           
+        font-size: 18px;
+        font-weight: 600;        
+        filter: none;
+        color: white;
+        border-color: darken($brand-main-default, 10%);
+        border-style: solid;
+        border-width: 1px 0px 4px;
+        height: 39px;
+        line-height: 39px;
+        -webkit-transition: margin 75ms,border-width 75ms,background 75ms;
+        -moz-transition: margin 75ms,border-width 75ms,background 75ms;
+        -o-transition: margin 75ms,border-width 75ms,background 75ms;
+        transition: margin 75ms,border-width 75ms,background 75ms;
+        vertical-align: top;         
+        @include border-radius(4px);
         &:hover {
             color:#fff;
             text-decoration:none;
         }
+        &:active {
+            border-width: 1px 0px 1px;
+            margin-top: 3px;                
+        }        
     }
     a.btn_external {
         text-align:center;
@@ -149,9 +192,10 @@ $brand-side-edreams:#ffcc00;
         &:hover {
             text-decoration:none;
         }
-    }
-   
+    }   
 }
+
+/****** MODAL BOX ******/
 .sb-home-modal {
     position: fixed;
     top: 0;
@@ -179,7 +223,7 @@ $brand-side-edreams:#ffcc00;
 }
 
 
-/* location input field */
+/****** AUTOCOMPLETE FIELDS ******/
 .location_list {
     position:absolute;
     z-index:998;
@@ -202,121 +246,113 @@ $brand-side-edreams:#ffcc00;
     color:#fff  
 }
 
-/* Brand dependant */
+/****** BRAND DEPENDANT ******/
+
+$brands: 
+(edreams $brand-main-edreams $brand-side-edreams),
+(travellink $brand-main-travellink $brand-side-travellink),
+(opodo $brand-main-opodo $brand-side-opodo);
+ 
 .sb_widget {
-    .edreams_old {
-        &.widgetbox {
-            background:$brand-side-edreams;
-            h3 {     
-                color:#444;
-                text-shadow: 2px 2px 3px rgba(255,255,255,0.5); 
-            }            
+    @each $brand, $brand-main-color, $brand-side-color in $brands  {
+        .#{$brand} {
+            &.widgetbox {
+                border-color:$brand-side-color;
+                h3 {     
+                    .ds-header-feat {
+                        color:$brand-main-color;
+                        border-color:$brand-main-color;
+                    }
+                }            
+            }
+            .input_holder {
+                input[type="text"],
+                select {
+                    &:focus {
+                        border-color:$brand-main-color;
+                    }
+                }
+            }
+            a.btn_action {
+                background:$brand-main-color;
+                border-color:darken($brand-main-color, 15%);
+                &:hover {
+                    background:darken($brand-main-color, 7%);
+                }
+            }
+            a.btn_external {
+                color:$brand-main-color;
+            }  
         }
-        label {
-            color:#666;
-        }        
-        a.btn_action {
-            border-top:1px solid #006bdd;
-            background: -moz-linear-gradient(top,  #003298 0%, #00035f 100%);
-            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#003298), color-stop(100%,#00035f));
-            background: -webkit-linear-gradient(top,  #003298 0%,#00035f 100%);
-            background: -o-linear-gradient(top,  #003298 0%,#00035f 100%);
-            background: -ms-linear-gradient(top,  #003298 0%,#00035f 100%);
-            background: linear-gradient(to bottom,  #003298 0%,#00035f 100%);
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003298', endColorstr='#00035f',GradientType=0 );   
-        }
-        a.btn_external {
-            color:#003399;
-        }        
     }
+}
+/*
+.sb_widget {
+     
+    
     .edreams {
         &.widgetbox {
-            background:#fff;
-            border-top:4px solid $brand-side-edreams;
-            box-shadow:0 0 4px -1px #333;
-            position:relative;
-            z-index:998;
+            border-color:$brand-side-edreams;
             h3 {     
-                color:#444;
-                margin:0 0 10px;
-                font-size:24px;
-                line-height:100%;
-                text-transform:none;
-                text-align:left;
-                letter-spacing:unset;
                 .ds-header-feat {
                     color:$brand-main-edreams;
-                    border-top:4px solid $brand-main-edreams;
-                    padding-top:4px;
-                    vertical-align:top;
+                    border-color:$brand-main-edreams;
                 }
             }            
         }
-        label {
-            color:#666;
-        }  
-        .btn_action_wrapper {
-            height:44px;
-            overflow:hidden;
+        .input_holder {
+            input[type="text"],
+            select {
+                &:focus {
+                    border-color:$brand-main-edreams;
+                }
+            }
         }
         a.btn_action {
-            cursor: pointer;
-            margin: 0;
-            -webkit-border-radius: 4px;
-            -moz-border-radius: 4px;
-            -ms-border-radius: 4px;
-            -o-border-radius: 4px;
-            border-radius: 4px;            
-            font-size: 18px;
-            font-weight: 600;
-            background: #1e44d5;
-            filter: none;
-            color: white;
-            border-color: #060583;
-            border-style: solid;
-            border-width: 1px 0px 4px;
-            height: 39px;
-            line-height: 39px;
-            -webkit-transition: margin 75ms,border-width 75ms,background 75ms;
-            -moz-transition: margin 75ms,border-width 75ms,background 75ms;
-            -o-transition: margin 75ms,border-width 75ms,background 75ms;
-            transition: margin 75ms,border-width 75ms,background 75ms;
-            vertical-align: top; 
+            background:$brand-main-edreams;
+            border-color:darken($brand-main-edreams, 15%);
             &:hover {
-                background:lighten(#060583, 7%);
-            }
-            &:active {
-                border-width: 1px 0px 1px;
-                margin-top: 3px;                
+                background:darken($brand-main-edreams, 7%);
             }
         }
         a.btn_external {
-            color:#003399;
+            color:$brand-main-edreams;
         }        
     }
     .travellink {
         &.widgetbox {
-            background:#48a1b1;
+            border-color:$brand-side-travellink;
             h3 {     
-                color:#fff;
-                text-shadow: 2px 2px 3px rgba(28,117,133,0.5); 
+                .ds-header-feat {
+                    color:$brand-main-travellink;
+                    border-color:$brand-main-travellink;
+                }
             }            
-        }
-        label {
-            color:#eee;
         } 
+        .input_holder {
+            input[type="text"],
+            select {
+                &:focus {
+                    border-color:$brand-main-travellink;
+                }
+            }
+        }
         a.btn_action {
-            background:#ff4501;
+            background:$brand-main-travellink;
+            border-color:darken($brand-main-travellink, 15%);
+            &:hover {
+                background:darken($brand-main-travellink, 7%);
+            }
         }
         a.btn_external {
-            color:#fff;
-        }          
+            color:$brand-main-travellink;
+        }           
     }
-}
+}*/
 
     
 
-/* Datepicker */
+/****** DATEPICKER ******/
 .ui-datepicker {
     max-width:250px;
 }
