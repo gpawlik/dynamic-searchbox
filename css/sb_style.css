@@ -156,7 +156,7 @@ CSS Matrix Rotation Calculator http://www.boogdesign.com/examples/transforms/mat
   .sb_widget .input_holder {
     widht: 100%;
     position: relative;
-    margin-bottom: 5px; }
+    margin-bottom: 8px; }
     .sb_widget .input_holder input[type="text"],
     .sb_widget .input_holder select {
       -webkit-appearance: none;
@@ -173,20 +173,25 @@ CSS Matrix Rotation Calculator http://www.boogdesign.com/examples/transforms/mat
       -moz-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
       box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
       height: 42px;
+      line-height: 22px;
       width: 100%;
       border: 1px solid #ccc;
       color: #333;
       font-size: 14px;
       box-sizing: border-box;
-      padding: 10px;
-      font-style: normal; }
+      padding: 0 10px;
+      margin: 0;
+      font-style: normal;
+      cursor: pointer;
+      vertical-align: middle; }
       .sb_widget .input_holder input[type="text"]:hover,
       .sb_widget .input_holder select:hover {
         border: 1px solid #aaa; }
       .sb_widget .input_holder input[type="text"]:focus,
       .sb_widget .input_holder select:focus {
         border: 2px solid #1e44d5;
-        padding: 9px; }
+        padding: 9px;
+        outline: none; }
       .sb_widget .input_holder input[type="text"].error,
       .sb_widget .input_holder select.error {
         border: 2px solid #ff6d5a;
@@ -332,7 +337,8 @@ CSS Matrix Rotation Calculator http://www.boogdesign.com/examples/transforms/mat
     .sb_widget .edreams.widgetbox h3 .ds-header-feat {
       color: #1e44d5;
       border-top: 4px solid #1e44d5;
-      padding-top: 4px; }
+      padding-top: 4px;
+      vertical-align: top; }
 .sb_widget .edreams label {
   color: #666; }
 .sb_widget .edreams .btn_action_wrapper {
