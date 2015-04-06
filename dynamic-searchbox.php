@@ -97,9 +97,9 @@ class wp_dynamic_searchbox extends WP_Widget {
            
            // these are the widget options
            $title       = apply_filters('widget_title', $instance['title']);
-           $button_text = $instance['text'];
-           $brand       = $instance['brand'];
-           $itinerary   = $instance['itinerary'];
+           $button_text = (isset($instance['text']))      ? $instance['text']      : "";
+           $brand       = (isset($instance['brand']))     ? $instance['brand']     : "";
+           $itinerary   = (isset($instance['itinerary'])) ? $instance['itinerary'] : "";
            
            // cross-wp variables
            $default_origin_name = get_post_meta(get_the_ID(), 'sb-city-name', true);

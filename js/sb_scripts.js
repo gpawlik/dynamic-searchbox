@@ -2,8 +2,9 @@ jQuery(document).ready(function () {
 
     /***** DATE DROPPER *****/
     /************************/
-    jQuery('input[name=alert_date_from]').dateDropper({lock: 'to', lang: 'fr', color: '#ffcc00'});
-    jQuery('input[name=alert_date_to]').dateDropper({lock: 'from', lang: 'fr', color: '#ffcc00'});
+    var site_lang = jQuery('html').attr('lang').split('-'); 
+    jQuery('input[name=alert_date_from]').dateDropper({lock: 'to', lang: site_lang[0], color: '#ffcc00'});
+    jQuery('input[name=alert_date_to]').dateDropper({lock: 'from', lang: site_lang[0], color: '#ffcc00'});
 
     /***** FOCUS EFFECT *****/
     /************************/
